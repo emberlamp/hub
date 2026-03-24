@@ -21,13 +21,13 @@ Emberlamp is a fully automated organization with 14 repositories managed through
    │  skills │      │swe-agent │      │   bot   │
    │   repo  │      │   repo   │      │   repo  │
    └────┬────┘      └────┬─────┘      └────┬────┘
-        │                │                  │
-        └────────────────┴──────────────────┘
+        │                │                 │
+        └────────────────┴─────────────────┘
                          │
                          ▼
               ┌─────────────────────┐
-              │        hub         │
-              │   (this repo)      │
+              │        hub          │
+              │   (this repo)       │
               └─────────────────────┘
 ```
 
