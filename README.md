@@ -9,26 +9,23 @@ Emberlamp is a fully automated organization with 14 repositories managed through
 ## Architecture
 
 ```
-                    ┌─────────────┐
-                    │   config    │
-                    │ repos.json  │
-                    └──────┬──────┘
-                           │
-        ┌──────────────────┼──────────────────┐
-        │                  │                  │
-        ▼                  ▼                  ▼
-   ┌─────────┐      ┌──────────┐      ┌─────────┐
-   │  skills │      │swe-agent │      │   bot   │
-   │   repo  │      │   repo   │      │   repo  │
-   └────┬────┘      └────┬─────┘      └────┬────┘
-        │                │                 │
-        └────────────────┴─────────────────┘
-                         │
-                         ▼
-              ┌─────────────────────┐
-              │        hub          │
-              │   (this repo)       │
-              └─────────────────────┘
+        ┌─────────────┐
+        │   config   │
+        │ repos.json │
+        └──────┬──────┘
+               │
+┌──────────────┼──────────────┐
+│              │              │
+▼              ▼              ▼
+  skills    swe-agent    bot
+  repo       repo       repo
+   └─────────┬────────────┘
+             │
+             ▼
+        ┌──────────┐
+        │   hub    │
+        │(this one)│
+        └──────────┘
 ```
 
 ## Repositories
@@ -65,7 +62,6 @@ Emberlamp is a fully automated organization with 14 repositories managed through
 | [warnings](https://github.com/emberlamp/warnings) | Warning messages |
 | [json-repo](https://github.com/emberlamp/json-repo) | JSON schemas |
 | [gitkeep](https://github.com/emberlamp/gitkeep) | Placeholder |
-| [.github](https://github.com/emberlamp/.github) | Org profile |
 
 ## Quick Start
 
