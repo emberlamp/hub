@@ -85,6 +85,29 @@ Each repo has 3 workflows:
 - **Release** - Auto version bump & release on push
 - **Automation** - Sync, backup, report (schedule/manual)
 
+### Trigger Release on All Repos
+
+```bash
+# Run release workflow on all 14 repos
+for repo in general react-template swe-agent gh-pin-repo config cli bot license warnings json-repo gitkeep skills hub; do
+  gh workflow run release.yml -R emberlamp/$repo &
+done
+wait
+
+# Check results
+for repo in general react-template swe-agent gh-pin-repo config cli bot license warnings json-repo gitkeep skills hub; do
+  gh run list --repo emberlamp/$repo --limit 1
+done
+```
+
+### Manual Release with Version
+
+```bash
+# Trigger specific version bump
+gh workflow run release.yml -f version=minor -R emberlamp/hub
+gh workflow run release.yml -f version=patch -R emberlamp/hub
+```
+
 ## Documentation
 
 - [Config Repo](https://github.com/emberlamp/config) - Repository list
