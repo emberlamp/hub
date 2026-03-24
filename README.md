@@ -4,7 +4,7 @@ Central hub for the emberlamp organization - connects all repositories.
 
 ## Overview
 
-Emberlamp is a fully automated organization with 13 repositories managed through centralized control.
+Emberlamp is a fully automated organization with 14 repositories managed through centralized control.
 
 ## Architecture
 
