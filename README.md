@@ -28,6 +28,37 @@ Emberlamp is a fully automated organization with 14 repositories managed through
        └──────────┘
 ```
 
+## Automated Release Workflow
+
+All 14 repos have automated releases based on conventional commits:
+
+| Commit | Release Type |
+|--------|--------------|
+| `feat:` | minor (v1.0 → v1.1.0) |
+| `fix:` | patch (v1.1.0 → v1.1.1) |
+| `docs:` | no release |
+
+**How it works:**
+1. Push to `main` triggers the release workflow
+2. Workflow checks commits since last tag
+3. Creates new tag automatically
+4. Generates release notes
+5. Creates GitHub release
+
+**Test release sync:**
+```bash
+for repo in general license react-template gitkeep warnings json-repo gh-pin-repo config swe-agent cli bot skills hub; do
+  tags=$(gh api repos/emberlamp/$repo/tags --jq '.[].name' | head -1)
+  releases=$(gh api repos/emberlamp/$repo/releases --jq '.[0].tag_name')
+  echo "$repo: tag=$tags release=$releases"
+done
+```
+
+**Troubleshooting:**
+- Tag exists but no release → Check workflow ran successfully
+- Wrong version bump → Check commit message prefix
+- Broken changelog link → Verify workflow has latest fixes
+
 ## Repositories
 
 ### Core Control
