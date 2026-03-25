@@ -134,10 +134,12 @@ python agent.py capabilities
 
 ## Automated Workflows
 
-Each repo has 3 workflows:
+Each repo has 5 workflows:
 - **CI** - Lint & test on push to main
 - **Release** - Auto version bump & release on push
 - **Automation** - Sync, backup, report (schedule/manual)
+- **Label PRs** - Auto-label PRs based on changed files
+- **Emberlamp Auto Bot** - Daily sync and org management
 
 ### Trigger Release on All Repos
 
