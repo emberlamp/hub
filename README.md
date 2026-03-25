@@ -65,6 +65,23 @@ done
 - Wrong version bump → Check commit message prefix
 - Broken changelog link → Verify workflow has latest fixes
 
+## Automation Workflow
+
+All repos have an automation workflow that runs daily and on-demand:
+
+| Action | Description |
+|--------|-------------|
+| **sync** | Compares config repos.json with actual GitHub repos |
+| **report** | Generates org report with repo list |
+| **all** | Runs both sync and report |
+
+**Usage:**
+```bash
+gh workflow run automation.yml -f action=sync --repo emberlamp/general
+gh workflow run automation.yml -f action=report --repo emberlamp/general
+gh workflow run automation.yml -f action=all --repo emberlamp/general
+```
+
 ## Repositories
 
 ### Core Control
