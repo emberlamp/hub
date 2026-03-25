@@ -38,6 +38,12 @@ All 14 repos have automated releases based on conventional commits:
 | `fix:` | patch (v1.1.0 → v1.1.1) |
 | `docs:` | no release |
 
+**Manual trigger (override):**
+```bash
+gh workflow run release.yml -f version=patch --repo emberlamp/repo
+gh workflow run release.yml -f version=minor --repo emberlamp/repo
+```
+
 **How it works:**
 1. Push to `main` triggers the release workflow
 2. Workflow checks commits since last tag
