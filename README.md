@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Coccinella-Labs/hub/main/.github/assets/thumbnail.png" alt="hub" width="100%">
+</p>
+
 # Emberlamp Hub
 
 Central hub for the emberlamp organization - connects all repositories.
